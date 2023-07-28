@@ -2,6 +2,11 @@
 import EducationCard from "../cards/educationCard.astro";
 import SectionHeader from "../SectionHeader.astro";
 import WorkCard from "../cards/workCard.astro";
+import iima from '../../assets/iima.svg'
+import iitr from '../../assets/iitr.svg'
+import paypal from '../../assets/paypal.svg'
+import ola from '../../assets/ola.svg'
+import pharmeasy from '../../assets/pharmeasy.svg'
 
 ---
 
@@ -21,16 +26,16 @@ import WorkCard from "../cards/workCard.astro";
             <div class="cards">
                 <p>Education</p>
                 <div class="education">
-                    <EducationCard logoUrl="/iitr.svg" school="IIT Roorkee" title="B.Tech (CS)" />
-                    <EducationCard logoUrl="/iima.svg" school="IIM Ahmedabad" title="MBA"/>
+                    <EducationCard logoUrl={iitr.src} school="IIT Roorkee" title="B.Tech (CS)" />
+                    <EducationCard logoUrl={iima.src} school="IIM Ahmedabad" title="MBA"/>
                 </div>  
             </div>
             <div class="cards">
                 <p>Work Experience</p>
                 <div class="work">
-                    <WorkCard company="PayPal" logoUrl="/paypal.svg" subtitle="" title="Software Engineer" />
-                    <WorkCard company="Ola Electric" logoUrl="/ola.svg" subtitle="" title="Product Manager" />
-                    <WorkCard company="PharmEasy" logoUrl="/pharmeasy.svg" subtitle="" title="Product Owner" />
+                    <WorkCard company="PayPal" logoUrl={paypal.src} subtitle="" title="Software Engineer" />
+                    <WorkCard company="Ola Electric" logoUrl={ola.src} subtitle="" title="Product Manager" />
+                    <WorkCard company="PharmEasy" logoUrl={pharmeasy.src} subtitle="" title="Product Owner" />
                 </div>
             </div>
         </div>

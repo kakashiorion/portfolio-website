@@ -1,4 +1,6 @@
 ---
+import expand from '../../assets/expand.svg'
+
 interface Props {
   title: string;
   desc: string;
@@ -11,7 +13,7 @@ const { title, desc, index } = Astro.props;
 <div id=`card${index}` class="service-card">
   <button id=`button${index}` class="service-headline">
     <p id=`title${index}` class="title">{title}</p>
-    <img id=`icon${index}` src="/assets/expand.svg" class="icon" />
+    <img id=`icon${index}` src={expand.src} class="icon" />
   </button>
   <p id=`desc${index}` class="invisible">{desc}</p>
 </div>

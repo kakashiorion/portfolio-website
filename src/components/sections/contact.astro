@@ -3,6 +3,10 @@ import SectionHeader from "../SectionHeader.astro";
 import LinkCard from "../cards/linkCard.astro";
 import ServiceCard from "../cards/serviceCard.astro";
 import ContactForm from "../contactForm.astro";
+import linkedin from '../../assets/linkedin.svg'
+import github from '../../assets/github.svg'
+import gmail from '../../assets/gmail.svg'
+
 
 const emailID = "p17nitinkg@iima.ac.in"
 ---
@@ -17,12 +21,12 @@ const emailID = "p17nitinkg@iima.ac.in"
       <ContactForm />
       <div class="divider"></div>
       <a id="send-email" href=`mailto:${emailID}` class="email-card">
-        <img src="/assets/gmail.svg" class="email-icon"/>
+        <img src={gmail.src} class="email-icon"/>
         <p class="email-title">{emailID}</p>
       </a>
       <div class="links">
-        <LinkCard logoUrl="/linkedin.svg" title="LinkedIn" visitUrl="https://www.linkedin.com/in/nitin-gautam-70713073/"/>
-        <LinkCard logoUrl="/github.svg" title="GitHub" visitUrl="https://github.com/kakashiorion"/>
+        <LinkCard logoUrl={linkedin.src} title="LinkedIn" visitUrl="https://www.linkedin.com/in/nitin-gautam-70713073/"/>
+        <LinkCard logoUrl={github.src} title="GitHub" visitUrl="https://github.com/kakashiorion"/>
       </div>
     </div>
     <div class="second">
