@@ -1,0 +1,48 @@
+---
+import ProjectCard from "../cards/projectCard.astro";
+import SectionHeader from "../SectionHeader.astro";
+
+---
+
+<div id="portfolio">
+    <SectionHeader title="Portfolio" subtitle="List of a few projects that I have built"/>
+    <div class="project-list">
+        <ProjectCard title="Final Whistle" subtitle="A football score prediction game built as a full stack web app" logoUrl="/finalWhistle.png" githubUrl="https://github.com/kakashiorion/final-whistle" visitUrl="/final-whistle" tools={["/react.svg","/tailwind.svg","/graphql.svg","/prisma.svg","/postgreSQL.svg"]} />
+        <ProjectCard title="Communitas" subtitle="A social content discussion web app (lightweight Reddit)" logoUrl="/communitas.svg" githubUrl="https://github.com/kakashiorion/odin-communitas" visitUrl="/communitas" tools={["/nextJS.svg","/tailwind.svg","/nodeJS.svg","/mongoDB.svg"]} />
+        <ProjectCard title="Password Manager" subtitle="A react native mobile app for storing passwords" logoUrl="/passwordManager.svg" githubUrl="https://github.com/kakashiorion/rn-password-manager" visitUrl="/password-manager" tools={["/react.svg","/firebase.svg","/expo.svg"]} />
+        <ProjectCard title="Expense Tracker" subtitle="A personal finance mobile app built with Flutter" logoUrl="/expenseTracker.svg" githubUrl="https://github.com/kakashiorion/Expense-Tracker-App" visitUrl="/expense-tracker" tools={["/flutter.svg","/firebase.svg"]} />
+        <ProjectCard title="Garden Journal" subtitle="A Flutter based mobile app to track watering of garden plants" logoUrl="/gardenJournal.svg" githubUrl="https://github.com/kakashiorion/GardeningApp" visitUrl="/garden-journal" tools={["/flutter.svg","/sqlite.svg"]} />
+        <ProjectCard title="Dealbari" subtitle="A crowdfunding web platform for connecting startups and investors built with RedwoodJS" logoUrl="/dealbari.svg" githubUrl="https://github.com/kakashiorion/crowdfunding-app" visitUrl="/dealbari" tools={["/redwoodJS.svg","/tailwind.svg","/graphql.svg","/prisma.svg","/supabase.svg"]} />
+    </div>
+</div>
+
+<style>
+    #portfolio{
+        display: flex;
+        padding: 32px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        align-self: stretch;
+        border-radius: 24px;
+        border: 8px solid rgba(231, 193, 142, 0.50);
+        background: #FFF9F1;
+    }
+    .project-list{
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 800px) {
+        #portfolio{
+            padding: 48px;
+            gap: 48px;
+            border: 12px solid rgba(231, 193, 142, 0.50);
+        }
+        .project-list{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+</style>

@@ -1,0 +1,262 @@
+---
+---
+
+<div id="hero">
+  <div class="header">
+    <img
+      src="/nitin.svg"
+      alt="Nitin Portfolio Header Logo"
+      class="header-logo"
+    />
+    <div class="header-links">
+      <a href="#portfolio" class="black-text text-small">Portfolio</a>
+      <a href="#about" class="black-text text-small">About</a>
+      <a href="#contact" class="primary-text text-small">Contact</a>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-intro">
+        <p class="text-small black-text">Hi.. I am</p>
+        <a href="#about" class="text-large primary-text">NITIN GAUTAM</a>
+        <p class="text-small black-text">
+          Full Stack Developer and Product Manager
+        </p>
+      </div>
+      <p class="text-medium black-text">
+        As a freelancer, I help small businesses build awesome products for
+        their customers
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="primary-button button">
+          <p class="white-text text-small">Contact Me</p>
+        </a>
+        <a href="#portfolio" class="secondary-button button">
+          <p class="primary-text text-small">View Projects</p>
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="square-container"></div>
+      <div class="photo-container">
+        <img src="/photo.jpg" alt="Nitin photo" class="photo" />
+      </div>
+    </div>
+  </div>
+  <div class="scroll-down">
+    <img src="/down.svg" alt="Scroll Down" class="down-icon" />
+  </div>
+</div>
+
+<style>
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 64px;
+    align-self: stretch;
+    height: 928px;
+  }
+  .header {
+    display: none;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'Inter';
+  }
+  .hero-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+  .text-small {
+    font-size: 14px;
+  }
+  .text-large {
+    font-size: 40px;
+  }
+  .text-medium {
+    font-size: 24px;
+  }
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .button {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 12px;
+  }
+  .primary-button {
+    border: 2px solid #a764dc;
+    background-color: #a764dc;
+    box-shadow: 0px 1px 1px 0px rgba(99, 43, 143, 0.50);
+  }
+  .primary-button:hover {
+    background-color: #8f37d2;
+    border: 2px solid #8f37d2;
+  }
+  .secondary-button {
+    background-color: white;
+    border: 2px solid #a764dc;
+    box-sizing: content-box;
+  }
+  .secondary-button:hover {
+    background-color: #f5eefc;
+  }
+  .primary-text {
+    color: #a764dc;
+  }
+  .white-text {
+    color: white;
+  }
+  .black-text {
+    color: black;
+  }
+  .hero-images {
+    position: relative;
+    align-self: center;
+  }
+  .square-container {
+    width: 240px;
+    height: 240px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #83738f;
+  }
+  .photo-container {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 120px;
+    border: 2px solid #000;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    left: -60px;
+    top: -60px;
+  }
+  .photo {
+    height: 120px;
+    width: 150px;
+  }
+  .scroll-down {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    #hero {
+      justify-content: space-between;
+      gap: 0px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      align-self: stretch;
+    }
+    .header-logo {
+      height: 40px;
+      width: 92px;
+    }
+    .header-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      font-family: 'Inter';
+    }
+    .hero {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 80px;
+    }
+    .hero-content {
+      gap: 48px;
+    }
+    .hero-intro {
+      gap: 20px;
+    }
+    .text-small {
+      font-size: 18px;
+    }
+    .text-large {
+      font-size: 56px;
+    }
+    .text-medium {
+      font-size: 32px;
+    }
+    .hero-cta {
+      gap: 24px;
+      justify-content: start;
+    }
+    .button {
+      padding: 20px 40px;
+      gap: 12px;
+    }
+    .square-container {
+      width: 366px;
+      height: 480px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #83738f;
+    }
+    .photo-container {
+      width: 160px;
+      height: 160px;
+      border-radius: 160px;
+      left: -80px;
+      top: -80px;
+    }
+    .photo {
+      height: 160px;
+      width: 200px;
+    }
+    .scroll-down {
+      display: flex;
+      width: 48px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 48px;
+      background: #a764dc;
+    }
+    .down-icon {
+      height: 24px;
+      width: 24px;
+    }
+  }
+</style>

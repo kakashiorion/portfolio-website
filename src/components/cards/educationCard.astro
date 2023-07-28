@@ -1,0 +1,78 @@
+---
+interface Props {
+    school:string;
+    title:string;
+    logoUrl:string;
+}
+
+const {logoUrl,school,title} =Astro.props
+
+---
+
+<div class="card">
+    <p class="title">{title}</p>
+    <div class="info">
+        <img src={logoUrl} class="icon"/>
+        <p class="school">{school}</p>
+    </div>
+</div>
+
+<style>
+    .card{
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        flex: 1 0 0;
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 1px 1px 0px #DBEDAD;
+    }
+    .info{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .icon{
+        height: 16px;
+        width: 16px;
+    }
+    .school{
+        color: #8BA549;
+        font-family: 'Inter';
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .title{
+        color: #000;
+        font-family: 'Inter';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    @media (min-width: 800px) {
+        .card{
+            padding: 24px;
+            gap: 16px;
+        }
+        .info{
+            gap: 12px;
+        }
+        .icon{
+            height: 20px;
+            width: 20px;
+        }
+        .school{
+            font-size: 14px;
+        }
+        .title{
+            font-size: 22px;
+            line-height: 28px;
+        }
+    }
+</style>

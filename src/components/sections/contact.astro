@@ -1,0 +1,193 @@
+---
+import SectionHeader from "../SectionHeader.astro";
+import LinkCard from "../cards/linkCard.astro";
+import ServiceCard from "../cards/serviceCard.astro";
+import ContactForm from "../contactForm.astro";
+
+const emailID = "p17nitinkg@iima.ac.in"
+---
+
+<div id="contact">
+  <SectionHeader
+    title="Contact"
+    subtitle="If you like my work and want to collaborate, reach out to me!"
+  />
+  <div class="main">
+    <div class="first">
+      <ContactForm />
+      <div class="divider"></div>
+      <a id="send-email" href=`mailto:${emailID}` class="email-card">
+        <img src="/gmail.svg" class="email-icon"/>
+        <p class="email-title">{emailID}</p>
+      </a>
+      <div class="links">
+        <LinkCard logoUrl="/linkedin.svg" title="LinkedIn" visitUrl="https://www.linkedin.com/in/nitin-gautam-70713073/"/>
+        <LinkCard logoUrl="/github.svg" title="GitHub" visitUrl="https://github.com/kakashiorion"/>
+      </div>
+    </div>
+    <div class="second">
+      <p>I can help you in:</p>
+      <div class="service-list">
+        <ServiceCard
+          title="Creating a business website"
+          desc="You want to take your business online, but don't know where to start? You are in luck, I can help you in setting up a digital presence for your business and creating an amazing website for your customers to find your products/services."
+          index={1}
+        />
+        <div class="divider"></div>
+        <ServiceCard 
+          title="Developing a web or mobile app"
+          desc="You want to create a mobile app for your business? Or build an MVP web app for your startup? Don't worry.. I can help you in creating a product roadmap strategy as well as building a complete full stack web/mobile app from scratch that your customers will love."
+          index={2}
+        />
+        <div class="divider"></div>
+        <ServiceCard 
+          title="Managing product development"
+          desc="You have a team of developers and a product vision but don't have someone to lead the execution? With 4+ years of experience in product management and an MBA, I can help you in managing the end-to-end product development so that you can get your idea to your customers ASAP."
+          index={3}
+        />
+        <div class="divider"></div>
+        <ServiceCard 
+          title="Designing your brand"
+          desc="You want to set up a brand identity for your business? I can help you in creating digital marketing assets for your product/service, such as logo, blogs, forums, illustrations, posters, app/website design, that your customers will instantly relate with. "
+          index={4}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #contact {
+    display: flex;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    border-radius: 24px;
+    border: 8px solid #b8dce8;
+    background: rgba(212, 237, 245, 0.5);
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+  .first {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .divider {
+    height: 2px;
+    align-self: stretch;
+    background: #b8dce8;
+  }
+  .email-card{
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 16px;
+    gap:12px;
+    background: #FFF;
+    box-shadow: 0px 1px 1px 0px #BDE4EF;
+  }
+  .email-card:hover{
+    background-color: #7CBFDA;
+  }
+  .email-icon{
+    width: 24px;
+    height: 18px;
+  }
+  .email-title{
+    color: #0C3745;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .links {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .second {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    color: #000;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+
+  @media (min-width: 800px) {
+    #contact {
+      padding: 48px;
+      gap: 48px;
+      border: 12px solid #b8dce8;
+    }
+    .main {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .first {
+      gap: 32px;
+      flex: 1 0 0;
+    }
+    .form {
+      gap: 24px;
+    }
+    .email-card{
+      padding: 24px 32px;
+      gap: 16px;
+    }
+    .email-title{
+      font-size: 18px;
+    }
+    .email-icon{
+      width: 32px;
+      height: 24px;
+    }
+    .links {
+      gap: 24px;
+    }
+    .second {
+      gap: 24px;
+      flex: 1 0 0;
+      font-size: 24px;
+    }
+    .service-list {
+      gap: 16px;
+    }
+  }
+</style>
+

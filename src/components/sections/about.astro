@@ -1,0 +1,140 @@
+---
+import EducationCard from "../cards/educationCard.astro";
+import SectionHeader from "../SectionHeader.astro";
+import WorkCard from "../cards/workCard.astro";
+
+---
+
+<div id="about">
+    <SectionHeader title="About" subtitle="Getting to know my background"/>
+    <div class="main">
+        <div class="content">
+            <p>Hello!</p>
+            <p>I am a software developer by passion and a product manager by profession.</p>
+            <p>I love building applications that help users solve their day to day problems. I am a huge fan of minimalism and I want to simplify the business processes around the world.</p>
+            <p>I am experienced in building full stack web and mobile applications as well as managing development of SaaS products from ideation to delivery. I have worked with startups to build and scale up multiple products that are now used by millions of customers.</p>
+            <p>Outside work, I love football, music, traveling and reading.</p>
+            <p>Oh.. and I am based out of Agra, India and am interested in working with people all across the world.</p>
+            <p>Cheers!</p>
+        </div>
+        <div class="details">
+            <div class="cards">
+                <p>Education</p>
+                <div class="education">
+                    <EducationCard logoUrl="/iitr.svg" school="IIT Roorkee" title="B.Tech (CS)" />
+                    <EducationCard logoUrl="/iima.svg" school="IIM Ahmedabad" title="MBA"/>
+                </div>  
+            </div>
+            <div class="cards">
+                <p>Work Experience</p>
+                <div class="work">
+                    <WorkCard company="PayPal" logoUrl="/paypal.svg" subtitle="" title="Software Engineer" />
+                    <WorkCard company="Ola Electric" logoUrl="/ola.svg" subtitle="" title="Product Manager" />
+                    <WorkCard company="PharmEasy" logoUrl="/pharmeasy.svg" subtitle="" title="Product Owner" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #about{
+        display: flex;
+        padding: 32px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        align-self: stretch;
+        border-radius: 24px;
+        border: 8px solid #DFF3AC;
+        background: #EFF5DB;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .content{
+        display: flex;
+        flex: 1 0 0;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        color: #000;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        flex: 1 0 0;
+        align-self: stretch;
+        color: #808080;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+    .education{
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .work{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    @media (min-width: 800px) {
+        #about{
+            padding: 48px;
+            gap: 48px;
+            border: 12px solid #DFF3AC;
+        }
+        .main {
+            flex-direction: row;
+            gap: 48px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .content {
+            gap:28px;
+            color: #000;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .details{
+            gap: 40px;
+            font-size: 18px;
+        }
+        .cards{
+            gap: 16px;
+        }
+        .education{
+            gap: 24px;
+        }
+        .work{
+            gap: 24px;
+        }
+    }
+</style>

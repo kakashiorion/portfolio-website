@@ -1,0 +1,149 @@
+---
+
+---
+
+<form id="contact-form">
+    <input type="text" id="form-name" class="single-input" placeholder="Your Name" required>
+    <input type="email" id="form-email" class="single-input" placeholder="Your Email" required>
+    <textarea id="form-message" name="message" class="multi-input" rows="4" placeholder="Your Message" required></textarea>
+    <input id="form-submit" class="form-submit" type="submit" value="SEND MESSAGE" >
+</form>
+
+<style>
+    #contact-form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        color: #AFAFAF;
+    }
+    .single-input{
+        font-family: 'Inter';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        align-self: stretch;
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    .single-input:focus{
+        border:2px solid #A764DC
+    }
+    .multi-input{
+        font-family: 'Inter';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        height: 160px;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        align-self: stretch;
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+        resize: none;
+    }
+    .multi-input:focus{
+        border:2px solid #A764DC
+    }
+    .form-submit{
+        display: flex;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        align-self: stretch;
+        border-radius: 16px;
+        background: #A764DC;
+        box-shadow: 0px 1px 1px 0px rgba(99, 43, 143, 0.50);
+        color: #FFF;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .form-submit:hover {
+        background-color: #8f37d2;
+    }
+    .sending{
+        background: #AFAFAF;
+        box-shadow: none;
+    }
+    .sending:hover{
+        background: #AFAFAF;
+    }
+    .sent{
+        background: transparent;
+        border: 2px solid #B8DCE8;
+        color: #0C3745;
+    }
+    .sent:hover{
+        background: transparent;
+    }
+
+    @media (min-width: 800px) {
+        #contact-form{
+            gap:24px;
+        }
+        .single-input{
+            font-size: 18px;
+            padding: 24px;
+            gap: 16px;
+        }
+        .multi-input{
+            font-size: 18px;
+            padding: 24px;
+            gap: 16px;
+        }
+        .form-submit{
+            padding: 24px;
+            gap:16px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+<script>
+    import sendEmail from '../sendEmail'
+
+    document.getElementById("form-submit")?.addEventListener("click",()=>{
+        const name = (document.getElementById('form-name') as HTMLInputElement)?.value;
+        const email = (document.getElementById('form-email') as HTMLInputElement)?.value;
+        const message = (document.getElementById('form-message') as HTMLInputElement)?.value;
+        const submit = (document.getElementById('form-submit') as HTMLInputElement)  
+
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all required fields.');
+        } else {
+            const timestamp = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+            
+            sendEmail(name,email, message, timestamp)
+            submit.disabled=true
+            submit.classList.add("sending")
+            submit.value="."
+            setTimeout(()=>{
+                submit.value=".."
+            },500)
+            setTimeout(()=>{
+                submit.value="..."
+            },1000)
+            setTimeout(()=>{
+                submit.classList.add("sent")
+                submit.value="MESSAGE SENT!"
+            },1500)
+        }
+    })
+</script>
