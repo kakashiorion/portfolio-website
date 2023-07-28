@@ -10,7 +10,7 @@ const {company,logoUrl,subtitle,title} =Astro.props
 ---
 <div class="card">
     <div class="info">
-        <img src={logoUrl} class="icon"/>
+        <img src={`/assets${logoUrl}`} class="icon"/>
         <p class="company">{company}</p>
     </div>
     <p class="title">{title}</p>

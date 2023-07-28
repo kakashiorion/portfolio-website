@@ -14,16 +14,16 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
 <a class="card" href={visitUrl}>
     <div class="headline">
         <p class="title">{title}</p>
-        <img src={logoUrl} class="icon-large"/>
+        <img src={`/assets${logoUrl}`} class="icon-large"/>
     </div>
     <p class="subtitle">{subtitle}</p>
     <div class="footer">
         <div class="tools">
             {tools.map((t)=>{
-                return <img src={t} class="icon-small"/>
+                return <img src={`/assets${t}`} class="icon-small"/>
             })}
         </div>
-        <img src="/right.svg" class="icon-small"/>
+        <img src="/assets/right.svg" class="icon-small"/>
     </div>
 </a>
 

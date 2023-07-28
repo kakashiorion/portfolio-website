@@ -8,7 +8,7 @@ const{logoUrl,visitUrl, title} = Astro.props
 ---
 
 <a href={visitUrl} class="link-card">
-    <img src={logoUrl} class="icon"/>
+    <img src={`/assets${logoUrl}`} class="icon"/>
     <p class="title">{title}</p>
 </a>
 
