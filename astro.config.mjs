@@ -9,5 +9,5 @@ export default defineConfig({
     assets: true,
   },
   sites: "https://kakashiorio.github.io/",
-  // base: "/portfolio-website",
+  base: "/portfolio-website",
 });
