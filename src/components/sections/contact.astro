@@ -14,12 +14,14 @@ const emailID = "p17nitinkg@iima.ac.in"
 <div id="contact">
   <SectionHeader
     title="Contact"
-    subtitle="If you like my work and want to collaborate, reach out to me!"
+    subtitle="Want to collaborate? Reach out to me!"
   />
   <div class="main">
     <div class="first">
+      <!-- <p class="subheading">CONTACT FORM</p> -->
       <ContactForm />
       <div class="divider"></div>
+      <!-- <p class="subheading">LINKS</p> -->
       <a id="send-email" href=`mailto:${emailID}` class="email-card">
         <img src={gmail.src} class="email-icon"/>
         <p class="email-title">{emailID}</p>
@@ -30,17 +32,18 @@ const emailID = "p17nitinkg@iima.ac.in"
       </div>
     </div>
     <div class="second">
+      <p class="subheading">Services</p>
       <p>I can help you in:</p>
       <div class="service-list">
         <ServiceCard
-          title="Creating a business website"
-          desc="You want to take your business online, but don't know where to start? You are in luck, I can help you in setting up a digital presence for your business and creating an amazing website for your customers to find your products/services."
+          title="Creating business website"
+          desc="You want to take your business online, but don't know where to start? Don't worry.. I can help you in setting up a digital presence for your business and creating an amazing website for your customers to find your products/services."
           index={1}
         />
         <div class="divider"></div>
         <ServiceCard 
-          title="Developing a web or mobile app"
-          desc="You want to create a mobile app for your business? Or build an MVP web app for your startup? Don't worry.. I can help you in creating a product roadmap strategy as well as building a complete full stack web/mobile app from scratch that your customers will love."
+          title="Developing web or mobile app"
+          desc="You want to create a mobile app for your business? Or build a product for your startup? You are in luck.. I can help you in creating a product roadmap strategy as well as building a complete full stack web/mobile app from scratch that your customers will love."
           index={2}
         />
         <div class="divider"></div>
@@ -51,8 +54,8 @@ const emailID = "p17nitinkg@iima.ac.in"
         />
         <div class="divider"></div>
         <ServiceCard 
-          title="Designing your brand"
-          desc="You want to set up a brand identity for your business? I can help you in creating digital marketing assets for your product/service, such as logo, blogs, forums, illustrations, posters, app/website design, that your customers will instantly relate with. "
+          title="Designing brand identity"
+          desc="You want to set up a brand identity for your business that resonates with your values? I can help you in creating digital assets for your product/service, such as logo, blogs, forums, illustrations, posters, app/website design, etc., that your customers can connect with instantly."
           index={4}
         />
       </div>
@@ -66,11 +69,11 @@ const emailID = "p17nitinkg@iima.ac.in"
     padding: 32px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 32px;
     align-self: stretch;
     border-radius: 24px;
-    border: 8px solid #b8dce8;
-    background: rgba(212, 237, 245, 0.5);
+    /* border: 4px solid #b8dce8; */
+    background: #EBF6FA;
   }
   .main {
     display: flex;
@@ -99,6 +102,14 @@ const emailID = "p17nitinkg@iima.ac.in"
     align-self: stretch;
     background: #b8dce8;
   }
+  .subheading{
+    color: #707070;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
   .email-card{
     display: flex;
     padding: 16px 24px;
@@ -108,7 +119,7 @@ const emailID = "p17nitinkg@iima.ac.in"
     border-radius: 16px;
     gap:12px;
     background: #FFF;
-    box-shadow: 0px 1px 1px 0px #BDE4EF;
+    box-shadow: 0px 1px 1px 0px rgba(12, 55, 69, 0.25);
   }
   .email-card:hover{
     background-color: #7CBFDA;
@@ -156,7 +167,7 @@ const emailID = "p17nitinkg@iima.ac.in"
     #contact {
       padding: 48px;
       gap: 48px;
-      border: 12px solid #b8dce8;
+      /* border: 4px solid #b8dce8; */
     }
     .main {
       flex-direction: row;
@@ -169,6 +180,9 @@ const emailID = "p17nitinkg@iima.ac.in"
     }
     .form {
       gap: 24px;
+    }
+    .subheading {
+      font-size: 18px;
     }
     .email-card{
       padding: 24px 32px;

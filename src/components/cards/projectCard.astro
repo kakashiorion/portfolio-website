@@ -40,6 +40,10 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
         background: white;
         box-shadow: 0px 2px 2px 0px rgba(255, 232, 201, 0.50);
     }
+    .card:hover{
+        transform: translate(-4px,-4px);
+        box-shadow: 0px 4px 4px 0px rgba(255, 232, 201, 0.50);
+    }
     .headline {
         display: flex;
         justify-content: space-between;
@@ -64,7 +68,7 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
         line-height: normal;
     }
     .subtitle{
-        color: #9E7947;
+        color: #906E41;
         font-family: 'Inter';
         font-size: 14px;
         font-style: normal;
@@ -93,6 +97,11 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
             justify-content: space-between;
             align-items: flex-start;
             flex: 1 0 0;
+            box-shadow: 0px 4px 4px 0px rgba(255, 232, 201, 0.50);
+        }
+        .card:hover{
+            transform: translate(-6px,-6px);
+            box-shadow: 0px 6px 6px 0px rgba(255, 232, 201, 0.50);
         }
         .icon-large{
             height: 40px;
