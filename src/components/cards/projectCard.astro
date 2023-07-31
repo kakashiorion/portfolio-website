@@ -3,25 +3,27 @@ import right from '../../assets/right.svg'
 interface Props {
     title:string;
     subtitle:string;
-    logoUrl:string;
-    githubUrl:string;
+    appLogo:string;
     visitUrl:string;
-    tools:string[];
+    tools:{
+        name:string;
+        logo:string;
+    }[];
 }
 
-const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
+const { title, subtitle, appLogo, visitUrl, tools} = Astro.props
 ---
 
 <a class="card" href={visitUrl}>
     <div class="headline">
         <p class="title">{title}</p>
-        <img src={logoUrl} class="icon-large"/>
+        <img src={appLogo} class="icon-large"/>
     </div>
     <p class="subtitle">{subtitle}</p>
     <div class="footer">
         <div class="tools">
             {tools.map((t)=>{
-                return <img src={t} class="icon-small"/>
+                return <img src={t.logo} class="icon-small"/>
             })}
         </div>
         <img src={right.src} class="icon-small"/>
@@ -37,12 +39,14 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
         gap: 16px;
         align-self: stretch;
         border-radius: 16px;
+        border:2px solid white;
         background: white;
         box-shadow: 0px 2px 2px 0px rgba(255, 232, 201, 0.50);
     }
     .card:hover{
-        transform: translate(-4px,-4px);
-        box-shadow: 0px 4px 4px 0px rgba(255, 232, 201, 0.50);
+        border: 2px solid #9D50D7 ;
+        /* transform: translate(-4px,-4px);
+        box-shadow: 0px 4px 4px 0px rgba(255, 232, 201, 0.50); */
     }
     .headline {
         display: flex;
@@ -82,6 +86,7 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
         justify-content: space-between;
         align-items: flex-end;
         align-self: stretch;
+        gap:8px;
     }
     .tools{
         display: flex;
@@ -99,10 +104,10 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
             flex: 1 0 0;
             box-shadow: 0px 4px 4px 0px rgba(255, 232, 201, 0.50);
         }
-        .card:hover{
+        /* .card:hover{
             transform: translate(-6px,-6px);
             box-shadow: 0px 6px 6px 0px rgba(255, 232, 201, 0.50);
-        }
+        } */
         .icon-large{
             height: 40px;
             width: 40px;
@@ -117,6 +122,9 @@ const { title, subtitle, logoUrl, githubUrl, visitUrl, tools} = Astro.props
         .subtitle{
             font-size: 18px;
             padding-bottom: 12px;
+        }
+        .footer{
+            gap:12px
         }
         .tools{
             gap:12px;

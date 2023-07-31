@@ -1,26 +1,7 @@
 ---
 import ProjectCard from "../cards/projectCard.astro";
 import SectionHeader from "../SectionHeader.astro";
-import finalWhistle from "../../assets/finalWhistle.png";
-import communitas from "../../assets/communitas.svg";
-import passwordManager from "../../assets/passwordManager.svg";
-import expenseTracker from "../../assets/expenseTracker.svg";
-import gardenJournal from "../../assets/gardenJournal.svg";
-import dealbari from "../../assets/dealbari.svg";
-import react from "../../assets/react.svg";
-import tailwind from "../../assets/tailwind.svg";
-import graphql from "../../assets/graphql.svg";
-import prisma from "../../assets/prisma.svg";
-import postgreSQL from "../../assets/postgreSQL.svg";
-import nodeJS from "../../assets/nodeJS.svg";
-import nextJS from "../../assets/nextJS.svg";
-import mongoDB from "../../assets/mongoDB.svg";
-import flutter from "../../assets/flutter.svg";
-import firebase from "../../assets/firebase.svg";
-import sqlite from "../../assets/sqlite.svg";
-import expo from "../../assets/expo.svg";
-import redwoodJS from "../../assets/redwoodJS.svg";
-import supabase from "../../assets/supabase.svg";
+import projects from "../../projects";
 ---
 
 <div id="portfolio">
@@ -29,70 +10,19 @@ import supabase from "../../assets/supabase.svg";
     subtitle="List of a few projects that I have built"
   />
   <div class="project-list">
-    <ProjectCard
-      title="Final Whistle"
-      subtitle="A football score prediction game built as a full stack web app"
-      logoUrl={finalWhistle.src}
-      githubUrl="https://github.com/kakashiorion/final-whistle"
-      visitUrl="/final-whistle"
-      tools={[react.src, tailwind.src, graphql.src, prisma.src, postgreSQL.src]}
-    />
-    <ProjectCard
-      title="Communitas"
-      subtitle="A social content discussion web app (lightweight Reddit)"
-      logoUrl={communitas.src}
-      githubUrl="https://github.com/kakashiorion/odin-communitas"
-      visitUrl="/communitas"
-      tools={[nextJS.src, tailwind.src, nodeJS.src, mongoDB.src]}
-    />
-    <ProjectCard
-      title="Password Manager"
-      subtitle="A react native mobile app for storing passwords"
-      logoUrl={passwordManager.src}
-      githubUrl="https://github.com/kakashiorion/rn-password-manager"
-      visitUrl="/password-manager"
-      tools={[react.src, firebase.src, expo.src]}
-    />
-    <ProjectCard
-      title="Expense Tracker"
-      subtitle="A personal finance mobile app built with Flutter"
-      logoUrl={expenseTracker.src}
-      githubUrl="https://github.com/kakashiorion/Expense-Tracker-App"
-      visitUrl="/expense-tracker"
-      tools={[flutter.src, firebase.src]}
-    />
-    <ProjectCard
-      title="Garden Journal"
-      subtitle="A Flutter based mobile app to track watering of garden plants"
-      logoUrl={gardenJournal.src}
-      githubUrl="https://github.com/kakashiorion/GardeningApp"
-      visitUrl="/garden-journal"
-      tools={[flutter.src, sqlite.src]}
-    />
-    <ProjectCard
-      title="Dealbari"
-      subtitle="A crowdfunding web platform for connecting startups and investors built with RedwoodJS"
-      logoUrl={dealbari.src}
-      githubUrl="https://github.com/kakashiorion/crowdfunding-app"
-      visitUrl="/dealbari"
-      tools={[
-        redwoodJS.src,
-        tailwind.src,
-        graphql.src,
-        prisma.src,
-        supabase.src,
-      ]}
-    />
+    {projects.map((project)=>
+       <ProjectCard title={project.name} subtitle={project.desc} appLogo={project.appLogoUrl} visitUrl={`/projects/${project.link}`} tools={project.tools}/>
+    )}
   </div>
 </div>
 
 <style>
   #portfolio {
     display: flex;
-    padding: 32px 24px;
+    padding: 48px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 48px;
     align-self: stretch;
     border-radius: 24px;
     /* border: 4px solid #E7C18E; */
@@ -102,12 +32,13 @@ import supabase from "../../assets/supabase.svg";
     display: grid;
     gap: 24px;
     grid-template-columns: 1fr;
+    align-self: stretch;
   }
 
   @media (min-width: 800px) {
     #portfolio {
       padding: 48px;
-      gap: 48px;
+      gap: 64px;
       /* border: 4px solid #E7C18E; */
     }
     .project-list {

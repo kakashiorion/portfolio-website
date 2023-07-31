@@ -9,6 +9,9 @@ import gmail from '../../assets/gmail.svg'
 
 
 const emailID = "p17nitinkg@iima.ac.in"
+const linkedInUrl = "https://www.linkedin.com/in/nitin-gautam-70713073/"
+const githubUrl = "https://github.com/kakashiorion"
+
 ---
 
 <div id="contact">
@@ -21,14 +24,14 @@ const emailID = "p17nitinkg@iima.ac.in"
       <!-- <p class="subheading">CONTACT FORM</p> -->
       <ContactForm />
       <div class="divider"></div>
-      <!-- <p class="subheading">LINKS</p> -->
-      <a id="send-email" href=`mailto:${emailID}` class="email-card">
-        <img src={gmail.src} class="email-icon"/>
-        <p class="email-title">{emailID}</p>
-      </a>
       <div class="links">
-        <LinkCard logoUrl={linkedin.src} title="LinkedIn" visitUrl="https://www.linkedin.com/in/nitin-gautam-70713073/"/>
-        <LinkCard logoUrl={github.src} title="GitHub" visitUrl="https://github.com/kakashiorion"/>
+        <div class="link-row">
+          <LinkCard logoUrl={gmail.src} title={emailID} visitUrl={`mailto:${emailID}`}/>
+        </div>
+        <div class="link-row">
+          <LinkCard logoUrl={linkedin.src} title="LinkedIn" visitUrl={linkedInUrl}/>
+          <LinkCard logoUrl={github.src} title="GitHub" visitUrl={githubUrl}/>
+        </div>
       </div>
     </div>
     <div class="second">
@@ -55,7 +58,7 @@ const emailID = "p17nitinkg@iima.ac.in"
         <div class="divider"></div>
         <ServiceCard 
           title="Designing brand identity"
-          desc="You want to set up a brand identity for your business that resonates with your values? I can help you in creating digital assets for your product/service, such as logo, blogs, forums, illustrations, posters, app/website design, etc., that your customers can connect with instantly."
+          desc="You want to set up an online identity for your business that resonates with your values? I can help you in creating digital assets for your product/service, such as logo, blogs, forums, illustrations, posters, app/website design, etc., that your customers can connect with instantly."
           index={4}
         />
       </div>
@@ -66,10 +69,10 @@ const emailID = "p17nitinkg@iima.ac.in"
 <style>
   #contact {
     display: flex;
-    padding: 32px 24px;
+    padding: 48px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 48px;
     align-self: stretch;
     border-radius: 24px;
     /* border: 4px solid #b8dce8; */
@@ -110,36 +113,17 @@ const emailID = "p17nitinkg@iima.ac.in"
     font-weight: 400;
     line-height: normal;
   }
-  .email-card{
-    display: flex;
-    padding: 16px 24px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border-radius: 16px;
-    gap:12px;
-    background: #FFF;
-    box-shadow: 0px 1px 1px 0px rgba(12, 55, 69, 0.25);
-  }
-  .email-card:hover{
-    background-color: #7CBFDA;
-  }
-  .email-icon{
-    width: 24px;
-    height: 18px;
-  }
-  .email-title{
-    color: #0C3745;
-    font-family: 'Inter';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
   .links {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+  }
+  .link-row{
+    display: flex;
+    gap:12px;
+    align-items: center;
     align-self: stretch;
   }
   .second {
@@ -166,7 +150,7 @@ const emailID = "p17nitinkg@iima.ac.in"
   @media (min-width: 800px) {
     #contact {
       padding: 48px;
-      gap: 48px;
+      gap: 64px;
       /* border: 4px solid #b8dce8; */
     }
     .main {
@@ -184,19 +168,11 @@ const emailID = "p17nitinkg@iima.ac.in"
     .subheading {
       font-size: 18px;
     }
-    .email-card{
-      padding: 24px 32px;
+    .links {
       gap: 16px;
     }
-    .email-title{
-      font-size: 18px;
-    }
-    .email-icon{
-      width: 32px;
-      height: 24px;
-    }
-    .links {
-      gap: 24px;
+    .link-row{
+      gap: 16px;
     }
     .second {
       gap: 24px;

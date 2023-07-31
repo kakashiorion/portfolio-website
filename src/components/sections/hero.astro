@@ -1,34 +1,23 @@
 ---
-import nitin from '../../assets/nitin.svg'
 import photo from '../../assets/photo.jpg'
 import down from '../../assets/down.svg'
+import PageHeader from '../PageHeader.astro';
 
 ---
 
 <div id="hero">
-  <div class="header">
-    <img
-      src={nitin.src}
-      alt="Nitin Portfolio Header Logo"
-      class="header-logo"
-    />
-    <div class="header-links">
-      <a href="#portfolio" class="black-text text-small">Portfolio</a>
-      <a href="#about" class="black-text text-small">About</a>
-      <a href="#contact" class="primary-text text-small">Contact</a>
-    </div>
-  </div>
+  <PageHeader />
   <div class="hero-main">
     <div class="hero-content">
       <div class="hero-intro">
         <p class="text-small gray-text">Hi.. I am</p>
         <a href="#about" class="text-large primary-text">NITIN GAUTAM</a>
         <p class="text-small gray-text text-bold">
-          Full Stack Developer and Product Manager
+          Freelance App Developer and Product Manager
         </p>
       </div>
       <p class="text-medium black-text">
-        As a freelancer, I help small businesses build awesome products for
+        I help small businesses build awesome web products for
         their customers
       </p>
       <div class="hero-cta">
@@ -61,27 +50,7 @@ import down from '../../assets/down.svg'
     gap: 80px;
     align-self: stretch;
   }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-  }
-  .header-logo{
-    height: 32px;
-    width: 64px;
-  }
-  .header-links{
-    /* display: none; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    font-family: 'Inter';
-  }
+ 
   .hero-main {
     display: flex;
     flex-direction: column-reverse;
@@ -203,26 +172,6 @@ import down from '../../assets/down.svg'
     #hero {
       justify-content: space-between;
       gap: 160px;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      align-self: stretch;
-    }
-    .header-logo {
-      height: 40px;
-      width: 80px;
-    }
-    .header-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 64px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      font-family: 'Inter';
     }
     .hero-main {
       align-items: center;
