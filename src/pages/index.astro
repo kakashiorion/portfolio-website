@@ -6,9 +6,10 @@ import Contact from '../components/sections/contact.astro';
 import Hero from '../components/sections/hero.astro';
 import Portfolio from '../components/sections/portfolio.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import n from '../assets/n.svg';
 ---
 
-<MainLayout title="Portfolio - Nitin Gautam">
+<MainLayout title="Portfolio - Nitin Gautam" logoSrc={n.src}>
 	<main id="main">
 		<Hero/>
 		<Portfolio/>

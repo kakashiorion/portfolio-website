@@ -3,7 +3,7 @@ import PageHeader from "../../components/PageHeader.astro";
 import ProjectLinkCard from "../../components/cards/projectLinkCard.astro";
 import Footer from "../../components/footer.astro";
 import BackToTop from "../../components/backToTop.astro";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 import projects from "../../projects";
 import type { ProjectType } from "../../projects";
 import github from "../../assets/github.svg";
@@ -11,6 +11,7 @@ import right from "../../assets/down.svg";
 import previous from "../../assets/previous.svg";
 import webDemo from "../../assets/webDemo.svg";
 import appDemo from "../../assets/appDemo.svg";
+import n from "../../assets/n.svg";
 import { YouTube } from '@astro-community/astro-embed-youtube';
 
 export function getStaticPaths() {
@@ -29,7 +30,7 @@ const { project } = Astro.props;
 const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0: p.index==project.index+1);
 ---
 
-<ProjectLayout title={`Project - ${project.name}`}>
+<MainLayout title={`Project - ${project.name}`} logoSrc={n.src}>
   <main id={`main-${project.index}`}>
     <PageHeader />
     <div class="proj-desc">
@@ -84,7 +85,7 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
     <Footer />
     <BackToTop />
   </main>
-</ProjectLayout>
+</MainLayout>
 
 <style>
   main {
