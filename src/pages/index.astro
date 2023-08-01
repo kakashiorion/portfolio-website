@@ -5,10 +5,10 @@ import BackToTop from '../components/backToTop.astro';
 import Contact from '../components/sections/contact.astro';
 import Hero from '../components/sections/hero.astro';
 import Portfolio from '../components/sections/portfolio.astro';
-import Layout from '../layouts/Layout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title="Portfolio - Nitin Gautam">
+<MainLayout title="Portfolio - Nitin Gautam">
 	<main id="main">
 		<Hero/>
 		<Portfolio/>
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
 		<Footer />
 		<BackToTop/>
 	</main>
-</Layout>
+</MainLayout>
 
 <style>
 	main {

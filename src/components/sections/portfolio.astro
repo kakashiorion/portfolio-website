@@ -11,7 +11,7 @@ import projects from "../../projects";
   />
   <div class="project-list">
     {projects.map((project)=>
-       <ProjectCard title={project.name} subtitle={project.desc} appLogo={project.appLogoUrl} visitUrl={`/projects/${project.link}`} tools={project.tools}/>
+       <ProjectCard title={project.name} subtitle={project.desc} appLogo={project.appLogoUrl} projectUrl={`projects/${project.link}`} tools={project.tools}/>
     )}
   </div>
 </div>

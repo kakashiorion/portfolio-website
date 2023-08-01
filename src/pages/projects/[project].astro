@@ -3,13 +3,15 @@ import PageHeader from "../../components/PageHeader.astro";
 import ProjectLinkCard from "../../components/cards/projectLinkCard.astro";
 import Footer from "../../components/footer.astro";
 import BackToTop from "../../components/backToTop.astro";
-import Layout from "../../layouts/Layout.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import projects from "../../projects";
 import type { ProjectType } from "../../projects";
 import github from "../../assets/github.svg";
 import right from "../../assets/down.svg";
+import previous from "../../assets/previous.svg";
 import webDemo from "../../assets/webDemo.svg";
 import appDemo from "../../assets/appDemo.svg";
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 export function getStaticPaths() {
   return projects.map((project: ProjectType) => {
@@ -27,7 +29,7 @@ const { project } = Astro.props;
 const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0: p.index==project.index+1);
 ---
 
-<Layout title={`Project - ${project.name}`}>
+<ProjectLayout title={`Project - ${project.name}`}>
   <main id={`main-${project.index}`}>
     <PageHeader />
     <div class="proj-desc">
@@ -40,10 +42,7 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
       </div>
     </div>
     <div class="proj-video">
-      <video class="video" controls autoplay muted>
-        <source src={project.videoUrl} type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
+      <YouTube id={project.videoUrl} class="video"/>
     </div>
     <div class="proj-section">
       <p class="proj-heading">Project links</p>
@@ -54,7 +53,13 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
     </div>
     <div class="proj-section">
       <p class="proj-heading">Gallery</p>
-      <div class="gallery-list"></div>
+      <div class="gallery-list">
+        <div class="image-before"><img id="prev-image" src={project.gallery[project.gallery.length-1]} class="image-side" alt="Previous Image"/></div>
+        <button id="prev-button" class="move-button"><img src={previous.src} class="move-icon"/></button>
+        <div class=`image-current ${project.isMobile?'image-short':''}`><img id="curr-image" src={project.gallery[0]} class="image-main" alt="Current Image"/></div>
+        <button id="post-button" class="move-button"><img src={previous.src} class="move-icon inverted"/></button>
+        <div class="image-after"><img id="post-image" src={project.gallery[1]} class="image-side" alt="Next Image"/></div>
+      </div>
     </div>
     <div class="proj-section">
       <p class="proj-heading">Tools/Frameworks</p>
@@ -67,7 +72,7 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
         })}
         </div>
     </div>
-    <a class="next-section" href={`/projects/${nextProject?.link}`}>
+    <a class="next-section" href={`${import.meta.env.BASE_URL}projects/${nextProject?.link}`}>
       <div class="next-info">
         <p class="tool-name">View next project</p>
         <p class="proj-heading">{nextProject?.name}</p>
@@ -79,7 +84,7 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
     <Footer />
     <BackToTop />
   </main>
-</Layout>
+</ProjectLayout>
 
 <style>
   main {
@@ -142,8 +147,8 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
     align-self: stretch;
   }
   .video{
-    height: 100%;
     width: 100%;
+    max-width: 1080px;
   }
   .proj-heading{
     color: #000;
@@ -225,10 +230,76 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
     border-radius: 32px;
     background: #9D50D7;
   }
+  
   .next-icon{
     height: 24px;
     width: 24px;
     transform: rotate(-90deg);
+  }
+  .inverted{
+    transform: rotate(180deg);
+    right:16px;
+  }
+  .move-button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    background: #fff;
+    border:2px solid #000;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .move-button:hover{
+    background-color: #ddd;
+  }
+  .move-icon{
+    height: 16px;
+    width: 16px;
+  }
+  .gallery-list{
+    display: flex;
+    align-self: stretch;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 8px;
+    gap:8px;
+  }
+  .image-before{
+    position: absolute;
+    right: calc(100% - 48px);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    opacity: 60%;
+  }
+  .image-current{
+    display: flex;
+    border: 4px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .image-short{
+    width:50%
+  }
+  .image-main{
+    height: 100%;
+    width: 100%;
+  }
+  .image-side{
+    height:calc(100%/1.6);
+  }
+  .image-after{
+    position: absolute;
+    left: calc(100% - 48px);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    opacity: 60%;
   }
 
   @media (min-width: 800px) {
@@ -263,7 +334,6 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
       padding: 0px 80px;
     }
     .video{
-
     }
     .proj-heading{
       font-size: 32px;
@@ -303,5 +373,59 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
       height: 32px;
       width: 32px;
     }
+    .move-icon{
+      height: 24px;
+      width: 24px;
+    }
+    .move-button{
+      height: 48px;
+      width: 48px;
+    }
+    .gallery-list{
+      gap:16px;
+      padding: 0px 16px;
+    }
+    .image-before{
+      right: calc(100% - 64px);
+    }
+    .image-current{
+      border: 8px solid #000;
+      border-radius: 16px;
+    }
+    .image-short{
+      width:33%
+    }
+    .image-after{
+      left: calc(100% - 64px);
+    }
   }
 </style>
+
+<script define:vars={{project}} >
+  let currentImageIndex=0;
+  const prevButton = document.getElementById("prev-button");
+  const postButton = document.getElementById("post-button");
+   
+  prevButton.addEventListener("click",()=>{
+    console.log("moving prev")
+    currentImageIndex = currentImageIndex==0?project.gallery.length-1:currentImageIndex - 1;
+    const prevImage = document.getElementById("prev-image");
+    prevImage.src=project.gallery[currentImageIndex==0?project.gallery.length-1:currentImageIndex-1];
+    const currImage = document.getElementById("curr-image");
+    currImage.src=project.gallery[currentImageIndex];
+    const postImage = document.getElementById("post-image");
+    postImage.src=project.gallery[currentImageIndex==project.gallery.length-1?0:currentImageIndex+1];
+  });
+  
+  postButton.addEventListener("click",()=>{
+    console.log("moving post")
+    currentImageIndex = currentImageIndex==project.gallery.length-1?0:currentImageIndex + 1;
+    const prevImage = document.getElementById("prev-image");
+    prevImage.src=project.gallery[currentImageIndex==0?project.gallery.length-1:currentImageIndex-1];
+    const currImage = document.getElementById("curr-image");
+    currImage.src=project.gallery[currentImageIndex];
+    const postImage = document.getElementById("post-image");
+    postImage.src=project.gallery[currentImageIndex==project.gallery.length-1?0:currentImageIndex+1];
+  });
+
+</script>

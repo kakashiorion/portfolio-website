@@ -1,4 +1,4 @@
-import finalWhistleLogo from "./assets/finalWhistle.png";
+import finalWhistleLogo from "./assets/finalWhistle.svg";
 import communitasLogo from "./assets/communitas.svg";
 import passwordManagerLogo from "./assets/passwordManager.svg";
 import expenseTrackerLogo from "./assets/expenseTracker.svg";
@@ -18,6 +18,53 @@ import sqlite from "./assets/sqlite.svg";
 import expo from "./assets/expo.svg";
 import redwoodJS from "./assets/redwoodJS.svg";
 import supabase from "./assets/supabase.svg";
+import fw1 from "./assets/finalWhistle/1.png";
+import fw2 from "./assets/finalWhistle/2.png";
+import fw3 from "./assets/finalWhistle/3.png";
+import fw4 from "./assets/finalWhistle/4.png";
+import fw5 from "./assets/finalWhistle/5.png";
+import fw6 from "./assets/finalWhistle/6.png";
+import fw7 from "./assets/finalWhistle/7.png";
+import fw8 from "./assets/finalWhistle/8.png";
+import fw9 from "./assets/finalWhistle/9.png";
+import fw10 from "./assets/finalWhistle/10.png";
+import fw11 from "./assets/finalWhistle/11.png";
+import fw12 from "./assets/finalWhistle/12.png";
+import fw13 from "./assets/finalWhistle/13.png";
+import fw14 from "./assets/finalWhistle/14.png";
+import fw15 from "./assets/finalWhistle/15.png";
+import fw16 from "./assets/finalWhistle/16.png";
+import fw17 from "./assets/finalWhistle/17.png";
+import co1 from "./assets/communitas/1.png";
+import co2 from "./assets/communitas/2.png";
+import co3 from "./assets/communitas/3.png";
+import co4 from "./assets/communitas/4.png";
+import co5 from "./assets/communitas/5.png";
+import co6 from "./assets/communitas/6.png";
+import co7 from "./assets/communitas/7.png";
+import co8 from "./assets/communitas/8.png";
+import co9 from "./assets/communitas/9.png";
+import et1 from "./assets/expenseTracker/1.png";
+import et2 from "./assets/expenseTracker/2.png";
+import et3 from "./assets/expenseTracker/3.png";
+import et4 from "./assets/expenseTracker/4.png";
+import et5 from "./assets/expenseTracker/5.png";
+import et6 from "./assets/expenseTracker/6.png";
+import et7 from "./assets/expenseTracker/7.png";
+import et8 from "./assets/expenseTracker/8.png";
+import et9 from "./assets/expenseTracker/9.png";
+import et10 from "./assets/expenseTracker/10.png";
+import et11 from "./assets/expenseTracker/11.png";
+import pm1 from "./assets/passwordManager/1.png";
+import pm2 from "./assets/passwordManager/2.png";
+import pm3 from "./assets/passwordManager/3.png";
+import pm4 from "./assets/passwordManager/4.png";
+import pm5 from "./assets/passwordManager/5.png";
+import gj1 from "./assets/gardenJournal/1.png";
+import gj2 from "./assets/gardenJournal/2.png";
+import gj3 from "./assets/gardenJournal/3.png";
+import gj4 from "./assets/gardenJournal/4.png";
+import gj5 from "./assets/gardenJournal/5.png";
 
 export interface ProjectType {
   index: number;
@@ -45,10 +92,10 @@ const projects: ProjectType[] = [
     isMobile: false,
     desc: "A fantasy football score prediction game built as a full stack web app in React",
     appLogoUrl: finalWhistleLogo.src,
-    videoUrl: "",
+    videoUrl: "https://youtu.be/xynhDVU4TWc",
     githubUrl: "https://github.com/kakashiorion/final-whistle",
     demoUrl: "",
-    gallery: ["", "", ""],
+    gallery: [fw1.src, fw2.src, fw3.src,fw4.src, fw5.src, fw6.src,fw7.src, fw8.src, fw9.src,fw10.src, fw11.src, fw12.src,fw13.src, fw14.src, fw15.src,fw16.src, fw17.src,],
     tools: [
       { name: "ReactJS", logo: react.src },
       { name: "TailwindCSS", logo: tailwind.src },
@@ -64,10 +111,10 @@ const projects: ProjectType[] = [
     isMobile: false,
     desc: "A content discussion social media web platform (lightweight Reddit) built with NextJS",
     appLogoUrl: communitasLogo.src,
-    videoUrl: "",
+    videoUrl: "https://youtu.be/y1Y0xsq8UYI",
     githubUrl: "https://github.com/kakashiorion/odin-communitas",
     demoUrl: "",
-    gallery: [],
+    gallery: [co1.src, co2.src, co3.src, co4.src, co5.src, co6.src,co7.src,co8.src,co9.src],
     tools: [
       {
         name: "NextJS",
@@ -94,10 +141,10 @@ const projects: ProjectType[] = [
     isMobile: true,
     desc: "A react native mobile app for storing personal data like passwords",
     appLogoUrl: passwordManagerLogo.src,
-    videoUrl: "../assets/PasswordManagerApp_Web.mp4",
+    videoUrl: "https://youtu.be/xxEnGn4n3C0",
     githubUrl: "https://github.com/kakashiorion/rn-password-manager",
     apkUrl: "",
-    gallery: [],
+    gallery: [pm1.src, pm2.src, pm3.src, pm4.src, pm5.src],
     tools: [
       {
         name: "ReactJS",
@@ -120,10 +167,10 @@ const projects: ProjectType[] = [
     isMobile: true,
     desc: "A personal financial transactions tracking mobile app built with Flutter",
     appLogoUrl: expenseTrackerLogo.src,
-    videoUrl: "",
+    videoUrl: "https://youtu.be/gGJ1nV5cT9k",
     githubUrl: "https://github.com/kakashiorion/Expense-Tracker-App",
     apkUrl: "",
-    gallery: [],
+    gallery: [et1.src, et2.src, et3.src, et4.src, et5.src, et6.src, et7.src,et8.src, et9.src, et10.src, et11.src],
     tools: [
       {
         name: "Flutter",
@@ -142,10 +189,10 @@ const projects: ProjectType[] = [
     isMobile: true,
     desc: "A Flutter based mobile app to track watering of plants in a garden",
     appLogoUrl: gardenJournalLogo.src,
-    videoUrl: "",
+    videoUrl: "https://youtu.be/Iz1T-oVCJUw",
     githubUrl: "https://github.com/kakashiorion/GardeningApp",
     apkUrl: "",
-    gallery: [],
+    gallery: [gj1.src, gj2.src, gj3.src, gj4.src,gj5.src],
     tools: [
       {
         name: "Flutter",

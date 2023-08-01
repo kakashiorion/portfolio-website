@@ -2,7 +2,9 @@
 import photo from '../../assets/photo.jpg'
 import down from '../../assets/down.svg'
 import PageHeader from '../PageHeader.astro';
+import { Image } from 'astro:assets';
 
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <div id="hero">
@@ -11,7 +13,7 @@ import PageHeader from '../PageHeader.astro';
     <div class="hero-content">
       <div class="hero-intro">
         <p class="text-small gray-text">Hi.. I am</p>
-        <a href="#about" class="text-large primary-text">NITIN GAUTAM</a>
+        <a href=`${baseUrl}#about` class="text-large primary-text">NITIN GAUTAM</a>
         <p class="text-small gray-text text-bold">
           Freelance App Developer and Product Manager
         </p>
@@ -21,10 +23,10 @@ import PageHeader from '../PageHeader.astro';
         their customers
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="primary-button button">
+        <a href=`${baseUrl}#contact` class="primary-button button">
           <p class="white-text text-small">Connect with me</p>
         </a>
-        <a href="#portfolio" class="secondary-button button">
+        <a href=`${baseUrl}#portfolio` class="secondary-button button">
           <p class="primary-text text-small">View my projects</p>
         </a>
       </div>
@@ -32,11 +34,11 @@ import PageHeader from '../PageHeader.astro';
     <div class="hero-images">
       <div class="square-container"></div>
       <div class="photo-container">
-        <img src={photo.src} alt="Nitin photo" class="photo" />
+        <Image src={photo} alt="Nitin photo" class="photo" />
       </div>
     </div>
   </div>
-  <a href="#portfolio" class="scroll-down">
+  <a href=`${baseUrl}#portfolio` class="scroll-down">
     <img src={down.src} alt="Scroll Down" class="down-icon" />
   </a>
 </div>
@@ -107,7 +109,6 @@ import PageHeader from '../PageHeader.astro';
   .primary-button {
     border: 2px solid #9D50D7;
     background-color: #9D50D7;
-    /* box-shadow: 0px 1px 1px 0px rgba(99, 43, 143, 0.50); */
   }
   .primary-button:hover {
     background-color: #7C2ABB;

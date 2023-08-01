@@ -1,10 +1,10 @@
 ---
 import nitin from '../assets/nitin.svg';
-
+const baseUrl = import.meta.env.BASE_URL
 ---
-<div class="header">
+<div id="header">
   <a
-    href="/">
+    href=`${baseUrl}`>
     <img
     src={nitin.src}
     alt="Nitin Portfolio Header Logo"
@@ -12,14 +12,14 @@ import nitin from '../assets/nitin.svg';
     />
   </a>  
     <div class="header-links">
-      <a href="/#portfolio" class="black-text text-small">Portfolio</a>
-      <a href="/#about" class="black-text text-small">About</a>
-      <a href="/#contact" class="primary-text text-small">Contact</a>
+      <a href=`${baseUrl}#portfolio` class="black-text text-small">Portfolio</a>
+      <a href=`${baseUrl}#about` class="black-text text-small">About</a>
+      <a href=`${baseUrl}#contact` class="primary-text text-small">Contact</a>
     </div>
 </div>
 
 <style>
-    .header {
+    #header {
         display: flex;
         justify-content: space-between;
         align-items: center;

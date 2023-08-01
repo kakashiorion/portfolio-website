@@ -8,6 +8,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
-  sites: "https://kakashiorion.github.io/portfolio-website",
-  // base: "/portfolio-website",
+  sites: "https://kakashiorion.github.io/",
+  base: "/portfolio-website",
 });
