@@ -94,7 +94,7 @@ const projects: ProjectType[] = [
     appLogoUrl: finalWhistleLogo.src,
     videoUrl: "https://youtu.be/xynhDVU4TWc",
     githubUrl: "https://github.com/kakashiorion/final-whistle",
-    demoUrl: "",
+    demoUrl: "https://final-whistle.netlify.app",
     gallery: [fw1.src, fw2.src, fw3.src,fw4.src, fw5.src, fw6.src,fw7.src, fw8.src, fw9.src,fw10.src, fw11.src, fw12.src,fw13.src, fw14.src, fw15.src,fw16.src, fw17.src,],
     tools: [
       { name: "ReactJS", logo: react.src },
@@ -113,7 +113,7 @@ const projects: ProjectType[] = [
     appLogoUrl: communitasLogo.src,
     videoUrl: "https://youtu.be/y1Y0xsq8UYI",
     githubUrl: "https://github.com/kakashiorion/odin-communitas",
-    demoUrl: "",
+    demoUrl: "https://odin-communitas.vercel.app",
     gallery: [co1.src, co2.src, co3.src, co4.src, co5.src, co6.src,co7.src,co8.src,co9.src],
     tools: [
       {
@@ -143,7 +143,7 @@ const projects: ProjectType[] = [
     appLogoUrl: passwordManagerLogo.src,
     videoUrl: "https://youtu.be/xxEnGn4n3C0",
     githubUrl: "https://github.com/kakashiorion/rn-password-manager",
-    apkUrl: "",
+    apkUrl: "https://drive.google.com/drive/u/0/folders/12uW0gg5RJ7wN5qANwHVXylk0Tf3_hb9s",
     gallery: [pm1.src, pm2.src, pm3.src, pm4.src, pm5.src],
     tools: [
       {
@@ -169,7 +169,7 @@ const projects: ProjectType[] = [
     appLogoUrl: expenseTrackerLogo.src,
     videoUrl: "https://youtu.be/gGJ1nV5cT9k",
     githubUrl: "https://github.com/kakashiorion/Expense-Tracker-App",
-    apkUrl: "",
+    apkUrl: "https://drive.google.com/drive/u/0/folders/1atgBxQzbCdNSRrds6noeQ2sbJyVG8857",
     gallery: [et1.src, et2.src, et3.src, et4.src, et5.src, et6.src, et7.src,et8.src, et9.src, et10.src, et11.src],
     tools: [
       {
@@ -191,7 +191,7 @@ const projects: ProjectType[] = [
     appLogoUrl: gardenJournalLogo.src,
     videoUrl: "https://youtu.be/Iz1T-oVCJUw",
     githubUrl: "https://github.com/kakashiorion/GardeningApp",
-    apkUrl: "",
+    apkUrl: "https://drive.google.com/drive/u/0/folders/1yYDZ78-WmEkyI0ddRYSN7iv3jfDvMC-P",
     gallery: [gj1.src, gj2.src, gj3.src, gj4.src,gj5.src],
     tools: [
       {
@@ -204,39 +204,39 @@ const projects: ProjectType[] = [
       },
     ],
   },
-  {
-    index: 5,
-    link: "dealbari",
-    name: "Dealbari",
-    isMobile: false,
-    desc: "A crowdfunding platform for connecting startups and investors built with RedwoodJS",
-    appLogoUrl: dealbariLogo.src,
-    videoUrl: "",
-    githubUrl: "https://github.com/kakashiorion/crowdfunding-app  ",
-    demoUrl: "",
-    gallery: [],
-    tools: [
-      {
-        name: "RedwoodJS",
-        logo: redwoodJS.src,
-      },
-      {
-        name: "TailwindCSS",
-        logo: tailwind.src,
-      },
-      {
-        name: "GraphQL",
-        logo: graphql.src,
-      },
-      {
-        name: "Prisma",
-        logo: prisma.src,
-      },
-      {
-        name: "Supabase",
-        logo: supabase.src,
-      },
-    ],
-  },
+  // {
+  //   index: 5,
+  //   link: "dealbari",
+  //   name: "Dealbari",
+  //   isMobile: false,
+  //   desc: "A crowdfunding platform for connecting startups and investors built with RedwoodJS",
+  //   appLogoUrl: dealbariLogo.src,
+  //   videoUrl: "",
+  //   githubUrl: "https://github.com/kakashiorion/crowdfunding-app  ",
+  //   demoUrl: "",
+  //   gallery: [],
+  //   tools: [
+  //     {
+  //       name: "RedwoodJS",
+  //       logo: redwoodJS.src,
+  //     },
+  //     {
+  //       name: "TailwindCSS",
+  //       logo: tailwind.src,
+  //     },
+  //     {
+  //       name: "GraphQL",
+  //       logo: graphql.src,
+  //     },
+  //     {
+  //       name: "Prisma",
+  //       logo: prisma.src,
+  //     },
+  //     {
+  //       name: "Supabase",
+  //       logo: supabase.src,
+  //     },
+  //   ],
+  // },
 ];
 export default projects;
