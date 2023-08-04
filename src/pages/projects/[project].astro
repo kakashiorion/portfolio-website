@@ -408,7 +408,6 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
   const postButton = document.getElementById("post-button");
    
   prevButton.addEventListener("click",()=>{
-    console.log("moving prev")
     currentImageIndex = currentImageIndex==0?project.gallery.length-1:currentImageIndex - 1;
     const prevImage = document.getElementById("prev-image");
     prevImage.src=project.gallery[currentImageIndex==0?project.gallery.length-1:currentImageIndex-1];
@@ -419,7 +418,6 @@ const nextProject = projects.find(p=>project.index==projects.length-1?p.index==0
   });
   
   postButton.addEventListener("click",()=>{
-    console.log("moving post")
     currentImageIndex = currentImageIndex==project.gallery.length-1?0:currentImageIndex + 1;
     const prevImage = document.getElementById("prev-image");
     prevImage.src=project.gallery[currentImageIndex==0?project.gallery.length-1:currentImageIndex-1];

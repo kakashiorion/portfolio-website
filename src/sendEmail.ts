@@ -14,12 +14,11 @@ const sendEmail = async(from_name:string, from_email:string, message:string, tim
             message:message,
             timestamp:timestamp
         }
-        console.log(data)
         await emailjs.send(serviceID, templateID, data);
-        console.log('Email sent successfully!');
+        // console.log('Email sent successfully!');
         return true;
       } catch (error) {
-        console.error('Error sending email:', error);
+        // console.error('Error sending email:', error);
         return false;
       }
 }
