@@ -10,4 +10,6 @@ Feel free to visit the [website](https://kakashiorion.github.io/portfolio-websit
 
 ## Contact
 
-You can reach out to me at > p17nitinkg@iima.ac.in or > 91-9840774089
+You can reach out to me at:
+> p17nitinkg@iima.ac.in
+> 91-9840774089
