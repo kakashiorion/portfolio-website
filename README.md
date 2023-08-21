@@ -6,7 +6,7 @@ I am a freelance software developer and product manager based out of India.
 
 ## Website
 
-Feel free to visit the [website](https://kakashiorion.github.io/portfolio-website/) to know more about me and my portfolio.
+Feel free to visit the [website](https://nitingautam.net/) to know more about me and my portfolio.
 
 ## Contact
 
